@@ -137,7 +137,7 @@ public class Arreglos {
 				switch (decision) {
 				case 1:
 
-					double resultado = calcularDivision(numerator, denominator);
+					double resultado = calculateDivision(numerator, denominator);
 					System.out.println("Quotient is: '" + resultado + " '");
 					//This case gives you the quotient of the division only
 
@@ -148,9 +148,9 @@ public class Arreglos {
 					int whole1 = (int) numerator;
 					int whole2 = (int) denominator;
 
-					int resultado2 = calcularDivision2(whole1, whole2);
+					int resultado2 = calculateDivision2(whole1, whole2);
 					System.out.println("Quotient is: '" + resultado2 + " '");
-					int resultado3 = calcularModulo(whole1, whole2);
+					int resultado3 = calculateModule(whole1, whole2);
 					System.out.println("Residue is: '" + resultado3 + " '");
 					//And this case gives you the quotient and the residue of the division
 
@@ -282,15 +282,18 @@ public class Arreglos {
 
 							if (arreglo1==0)
 
-								System.out.println("El promedio de su arreglo es " + calcularPromedio(num1));
+								System.out.println("The average of your array is " + 
+calculateAverage(num1));
 
 							else if (arreglo1==1)
 
-								System.out.println("El promedio de su arreglo es " + calcularPromedio(num2));
+								System.out.println("The average of your array is" + 
+calculateAverage(num2));
 
 							else if (arreglo1==2)
 
-								System.out.println("El promedio de su arreglo es " + calcularPromedio(num3));
+								System.out.println("The average of your array is" + 
+calculateAverage(num3));
 
 						}
 
@@ -309,15 +312,15 @@ public class Arreglos {
 
 							if (arreglo2==0)
 
-								System.out.println("El número mayor de su arreglo es " + calcularMayor(num1));
+								System.out.println("The largest number of your array is " + calculateHigher(num1));
 
 							else if (arreglo2==1)
 
-								System.out.println("El número mayor de su arreglo es " + calcularMayor(num2));
+								System.out.println("The largest number of your array is " + calculateHigher(num2));
 
 							else if (arreglo2==2)
 
-								System.out.println("El número mayor de su arreglo es " + calcularMayor(num3));
+								System.out.println("The largest number of your array is " + calculateHigher(num3));
 
 						}
 
@@ -325,7 +328,7 @@ public class Arreglos {
 
 					case 4:
 
-						System.out.println("What doy you want to do?");
+						System.out.println("What do you want to do?");
 						System.out.println("1: Add");
 						System.out.println("2: Substract");
 						System.out.println("3: Multiply");
@@ -340,7 +343,7 @@ public class Arreglos {
 							int arreglo3 = lector.nextInt();
 							arreglo3-=1;
 
-							System.out.println("Ahora escoge otro");
+							System.out.println("Now choose other");
 							int arreglo4 = lector.nextInt();
 							arreglo4-=1;
 
@@ -351,46 +354,46 @@ public class Arreglos {
 
 								if (arreglo3==0 && arreglo4==0) {
 
-									System.out.println("La suma entre su arreglo " + (arreglo3+1) + " y " + (arreglo4+1) + " es: ");
+									System.out.println("The sum between your array " + (arreglo3+1) + " and " + (arreglo4+1) + " is: ");
 
-									int [] retorno = calcularSuma(num1, num1);
+									int [] retorno = calculateSum(num1, num1);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
 
 								else if (arreglo3==0 && arreglo4==1) {
 
-									System.out.println("La suma entre su arreglo " + (arreglo3+1) + " y " + (arreglo4+1) + " es: ");
+									System.out.println("The sum between your array " + (arreglo3+1) + " and " + (arreglo4+1) + " is: ");
 
-									int [] retorno = calcularSuma(num1, num2);
+									int [] retorno = calculateSum(num1, num2);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}							
 								}
 								else if (arreglo3==0 && arreglo4==2) {
 
-									System.out.println("La suma entre su arreglo " + (arreglo3+1) + " y " + (arreglo4+1) + " es: ");
+									System.out.println("The sum between your array " + (arreglo3+1) + " and " + (arreglo4+1) + " is: ");
 
-									int [] retorno = calcularSuma(num1, num3);
+									int [] retorno = calculateSum(num1, num3);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
 								else if (arreglo3==1 && arreglo4==0) {
 
-									System.out.println("La suma entre su arreglo " + (arreglo3+1) + " y " + (arreglo4+1) + " es: ");
+									System.out.println("The sum between your array " + (arreglo3+1) + " and " + (arreglo4+1) + " is: ");
 
-									int [] retorno = calcularSuma(num2, num1);
+									int [] retorno = calculateSum(num2, num1);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 
@@ -398,24 +401,24 @@ public class Arreglos {
 
 								else if (arreglo3==1 && arreglo4==1) {
 
-									System.out.println("La suma entre su arreglo " + (arreglo3+1) + " y " + (arreglo4+1) + " es: ");
+									System.out.println("The sum between your array " + (arreglo3+1) + " and " + (arreglo4+1) + " is: ");
 
-									int [] retorno = calcularSuma(num2, num2);
+									int [] retorno = calculateSum(num2, num2);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
 
 								else if (arreglo3==1 && arreglo4==2) {
 
-									System.out.println("La suma entre su arreglo " + (arreglo3+1) + " y " + (arreglo4+1) + " es: ");
+									System.out.println("The sum between your array " + (arreglo3+1) + " and " + (arreglo4+1) + " is: ");
 
-									int [] retorno = calcularSuma(num2, num3);
+									int [] retorno = calculateSum(num2, num3);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 
@@ -423,34 +426,34 @@ public class Arreglos {
 
 								else if (arreglo3==2 && arreglo4==0) {
 
-									System.out.println("La suma entre su arreglo " + (arreglo3+1) + " y " + (arreglo4+1) + " es: ");
+									System.out.println("The sum between your array " + (arreglo3+1) + " and " + (arreglo4+1) + " is: ");
 
-									int [] retorno = calcularSuma(num3, num1);
+									int [] retorno = calculateSum(num3, num1);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 									}
 								}
 
 								else if (arreglo3==2 && arreglo4==1) {
 
-									System.out.println("La suma entre su arreglo " + (arreglo3+1) + " y " + (arreglo4+1) + " es: ");
+									System.out.println("The sum between your array " + (arreglo3+1) + " and " + (arreglo4+1) + " is: ");
 
-									int [] retorno = calcularSuma(num3, num2);
+									int [] retorno = calculateSum(num3, num2);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 									}
 								}
 
 								else if (arreglo3==2 && arreglo4==2) {
 
-									System.out.println("La suma entre su arreglo " + (arreglo3+1) + " y " + (arreglo4+1) + " es: ");
+									System.out.println("The sum between your array " + (arreglo3+1) + " and " + (arreglo4+1) + " is: ");
 
-									int [] retorno = calcularSuma(num3, num3);
+									int [] retorno = calculateSum(num3, num3);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
@@ -464,7 +467,7 @@ public class Arreglos {
 							int arreglo5 = lector.nextInt();
 							arreglo5-=1;
 
-							System.out.println("Ahora escoge otro");
+							System.out.println("Now choose other");
 							int arreglo6 = lector.nextInt();
 							arreglo6-=1;
 
@@ -475,46 +478,47 @@ public class Arreglos {
 
 								if (arreglo5==0 && arreglo6==0) {
 
-									System.out.println("La resta entre su arreglo " + (arreglo5+1) + " y " + (arreglo6+1) + " es: ");
+									System.out.println("The subtraction between your array " + (arreglo5+1) + " and " + (arreglo6+1) + " is: ");
 
-									int [] retorno = calcularResta(num1, num1);
+									int [] retorno = calculateSubtraction(num1, num1);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
 
 								else if (arreglo5==0 && arreglo6==1) {
 
-									System.out.println("La resta entre su arreglo " + (arreglo5+1) + " y " + (arreglo6+1) + " es: ");
+									System.out.println("The subtraction between your array " + (arreglo5+1) + " and " + (arreglo6+1) + " is: ");
 
-									int [] retorno = calcularResta(num1, num2);
+									int [] retorno = calculateSubtraction(num1, num2);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}							
 								}
 								else if (arreglo5==0 && arreglo6==2) {
 
-									System.out.println("La resta entre su arreglo " + (arreglo5+1) + " y " + (arreglo6+1) + " es: ");
+									System.out.println("The subtraction between your array " + (arreglo5+1) + " and " + (arreglo6+1) + " is: ");
 
-									int [] retorno = calcularResta(num1, num3);
+									int [] retorno = calculateSubtraction(num1, num3);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
+								
 								else if (arreglo5==1 && arreglo6==0) {
 
-									System.out.println("La resta entre su arreglo " + (arreglo5+1) + " y " + (arreglo6+1) + " es: ");
+									System.out.println("The subtraction between your array " + (arreglo5+1) + " and " + (arreglo6+1) + " is: ");
 
-									int [] retorno = calcularResta(num2, num1);
+									int [] retorno = calculateSubtraction(num2, num1);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 
@@ -522,24 +526,24 @@ public class Arreglos {
 
 								else if (arreglo5==1 && arreglo6==1) {
 
-									System.out.println("La resta entre su arreglo " + (arreglo5+1) + " y " + (arreglo6+1) + " es: ");
+									System.out.println("The subtraction between your array " + (arreglo5+1) + " and " + (arreglo6+1) + " is: ");
 
-									int [] retorno = calcularResta(num2, num2);
+									int [] retorno = calculateSubtraction(num2, num2);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
 
 								else if (arreglo5==1 && arreglo6==2) {
 
-									System.out.println("La resta entre su arreglo " + (arreglo5+1) + " y " + (arreglo6+1) + " es: ");
+									System.out.println("The subtraction between your array " + (arreglo5+1) + " and " + (arreglo6+1) + " is: ");
 
-									int [] retorno = calcularResta(num2, num3);
+									int [] retorno = calculateSubtraction(num2, num3);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 
@@ -547,34 +551,34 @@ public class Arreglos {
 
 								else if (arreglo5==2 && arreglo6==0) {
 
-									System.out.println("La resta entre su arreglo " + (arreglo5+1) + " y " + (arreglo6+1) + " es: ");
+									System.out.println("The subtraction between your array " + (arreglo5+1) + " and " + (arreglo6+1) + " is: ");
 
-									int [] retorno = calcularResta(num3, num1);
+									int [] retorno = calculateSubtraction(num3, num1);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 									}
 								}
 
 								else if (arreglo5==2 && arreglo6==1) {
 
-									System.out.println("La resta entre su arreglo " + (arreglo5+1) + " y " + (arreglo6+1) + " es: ");
+									System.out.println("The subtraction between your array " + (arreglo5+1) + " and " + (arreglo6+1) + " is: ");
 
-									int [] retorno = calcularResta(num3, num2);
+									int [] retorno = calculateSubtraction(num3, num2);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 									}
 								}
 
 								else if (arreglo5==2 && arreglo6==2) {
 
-									System.out.println("La resta entre su arreglo " + (arreglo5+1) + " y " + (arreglo6+1) + " es: ");
+									System.out.println("The subtraction between your array " + (arreglo5+1) + " and " + (arreglo6+1) + " is: ");
 
-									int [] retorno = calcularResta(num3, num3);
+									int [] retorno = calculateSubtraction(num3, num3);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
@@ -588,7 +592,7 @@ public class Arreglos {
 							int arreglo7 = lector.nextInt();
 							arreglo7-=1;
 
-							System.out.println("Ahora escoge otro");
+							System.out.println("Now choose other");
 							int arreglo8 = lector.nextInt();
 							arreglo8-=1;
 
@@ -599,46 +603,46 @@ public class Arreglos {
 
 								if (arreglo7==0 && arreglo8==0) {
 
-									System.out.println("La multiplicacion entre su arreglo " + (arreglo7+1) + " y " + (arreglo8+1) + " es: ");
+									System.out.println("The multiply between your array " + (arreglo7+1) + " and " + (arreglo8+1) + " is: ");
 
-									int [] retorno = calcularMultiplicacion(num1, num1);
+									int [] retorno = calculateMultiplying(num1, num1);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
 
 								else if (arreglo7==0 && arreglo8==1) {
 
-									System.out.println("La multiplicacion entre su arreglo " + (arreglo7+1) + " y " + (arreglo8+1) + " es: ");
+									System.out.println("The multiply between your array " + (arreglo7+1) + " and " + (arreglo8+1) + " is: ");
 
-									int [] retorno = calcularMultiplicacion(num1, num2);
+									int [] retorno = calculateMultiplying(num1, num2);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}							
 								}
 								else if (arreglo7==0 && arreglo8==2) {
 
-									System.out.println("La multiplicacion entre su arreglo " + (arreglo7+1) + " y " + (arreglo8+1) + " es: ");
+									System.out.println("The multiply between your array " + (arreglo7+1) + " and " + (arreglo8+1) + " is: ");
 
-									int [] retorno = calcularMultiplicacion(num1, num3);
+									int [] retorno = calculateMultiplying(num1, num3);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
 								else if (arreglo7==1 && arreglo8==0) {
 
-									System.out.println("La multiplicacion entre su arreglo " + (arreglo7+1) + " y " + (arreglo8+1) + " es: ");
+									System.out.println("The multiply between your array " + (arreglo7+1) + " and " + (arreglo8+1) + " is: ");
 
-									int [] retorno = calcularMultiplicacion(num2, num1);
+									int [] retorno = calculateMultiplying(num2, num1);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 
@@ -646,24 +650,24 @@ public class Arreglos {
 
 								else if (arreglo7==1 && arreglo8==1) {
 
-									System.out.println("La multiplicacion entre su arreglo " + (arreglo7+1) + " y " + (arreglo8+1) + " es: ");
+									System.out.println("The multiply between your array " + (arreglo7+1) + " and " + (arreglo8+1) + " is: ");
 
-									int [] retorno = calcularMultiplicacion(num2, num2);
+									int [] retorno = calculateMultiplying(num2, num2);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
 
 								else if (arreglo7==1 && arreglo8==2) {
 
-									System.out.println("La multiplicacion entre su arreglo " + (arreglo7+1) + " y " + (arreglo8+1) + " es: ");
+									System.out.println("The multiply between your array " + (arreglo7+1) + " and " + (arreglo8+1) + " is: ");
 
-									int [] retorno = calcularMultiplicacion(num2, num3);
+									int [] retorno = calculateMultiplying(num2, num3);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 
@@ -671,34 +675,34 @@ public class Arreglos {
 
 								else if (arreglo7==2 && arreglo8==0) {
 
-									System.out.println("La multiplicacion entre su arreglo " + (arreglo7+1) + " y " + (arreglo8+1) + " es: ");
+									System.out.println("The multiply between your array " + (arreglo7+1) + " and " + (arreglo8+1) + " is: ");
 
-									int [] retorno = calcularMultiplicacion(num3, num1);
+									int [] retorno = calculateMultiplying(num3, num1);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 									}
 								}
 
 								else if (arreglo7==2 && arreglo8==1) {
 
-									System.out.println("La multiplicacion entre su arreglo " + (arreglo7+1) + " y " + (arreglo8+1) + " es: ");
+									System.out.println("The multiply between your array " + (arreglo7+1) + " and " + (arreglo8+1) + " is: ");
 
-									int [] retorno = calcularMultiplicacion(num3, num2);
+									int [] retorno = calculateMultiplying(num3, num2);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 									}
 								}
 
 								else if (arreglo7==2 && arreglo8==2) {
 
-									System.out.println("La multiplicacion entre su arreglo " + (arreglo7+1) + " y " + (arreglo8+1) + " es: ");
+									System.out.println("The multiply between your array " + (arreglo7+1) + " and " + (arreglo8+1) + " is: ");
 
-									int [] retorno = calcularMultiplicacion(num3, num3);
+									int [] retorno = calculateMultiplying(num3, num3);
 									for (int i = 0; i < retorno.length; i++) {
 
-										System.out.println("En la posición "+(i+1)+ ": "+retorno[i]);
+										System.out.println("In position "+(i+1)+ ": "+retorno[i]);
 
 									}
 								}
@@ -713,9 +717,9 @@ public class Arreglos {
 
 					case 5:
 
-						System.out.println("La unión de sus tres arreglos con elementos repetidos es la siguente");
+						System.out.println("The union of your three arrays with repeated elements is:");
 
-						int [] union = unirArreglos(num1, num2, num3);
+						int [] union = linkArrays(num1, num2, num3);
 
 						System.out.println(Arrays.toString(union));
 
@@ -723,10 +727,10 @@ public class Arreglos {
 
 					case 6:
 
-						System.out.println("La unión de sus tres arreglos sin elementos repetidos es la siguente");
+						System.out.println("The union of your three arrays without repeated elements is:");
 
-						int [] union1 = unirArreglos(num1, num2, num3);
-						quitarDuplicados(union1);
+						int [] union1 = linkArrays(num1, num2, num3);
+						removeduplicates(union1);
 
 						break;
 
@@ -800,7 +804,7 @@ public class Arreglos {
 							if (arreglo10==0) {
 
 								System.out.println("Your sorted array is:");
-								int [] result = burbuja(num1);
+								int [] result = bubble(num1);
 								System.out.println(Arrays.toString(result));
 
 							}
@@ -808,7 +812,7 @@ public class Arreglos {
 							else if (arreglo10==1) {
 
 								System.out.println("Your sorted array is:");
-								int [] result = burbuja(num2);
+								int [] result = bubble(num2);
 								System.out.println(Arrays.toString(result));
 
 							}
@@ -816,7 +820,7 @@ public class Arreglos {
 							else if (arreglo10==2) {
 
 								System.out.println("Your sorted array is:");
-								int [] result = burbuja(num1);
+								int [] result = bubble(num1);
 								System.out.println(Arrays.toString(result));
 								
 							}
@@ -856,7 +860,7 @@ public class Arreglos {
 	 * @return resultado de la disivión de ambos parámetros de tipo double
 	 */
 
-	public static double calcularDivision (double numerador, double denominador) {
+	public static double calculateDivision (double numerador, double denominador) {
 
 		double resultado = 0;
 
@@ -874,7 +878,7 @@ public class Arreglos {
 	 * @return Retorna la division de ambos parámetros con resultado int
 	 */
 
-	public static int calcularDivision2 (int entero1, int entero2) {
+	public static int calculateDivision2 (int entero1, int entero2) {
 
 		int resultado = 0;
 
@@ -890,7 +894,7 @@ public class Arreglos {
 	 * @param entero2
 	 * @return Retorna el residuo de la división de ambos parámetros con resultado int
 	 */
-	public static int calcularModulo (int entero1, int entero2) {
+	public static int calculateModule (int entero1, int entero2) {
 
 		int resultado = 0;
 
@@ -900,7 +904,7 @@ public class Arreglos {
 	} 
 
 
-	public static double calcularPromedio(int arregloN[]) {
+	public static double calculateAverage(int arregloN[]) {
 
 		double promedio = 0;
 
@@ -915,7 +919,7 @@ public class Arreglos {
 
 	}
 
-	public static int calcularMayor(int arregloN []) {
+	public static int calculateHigher(int arregloN []) {
 
 		int mayor = arregloN [0];
 
@@ -931,7 +935,7 @@ public class Arreglos {
 		return mayor;
 	}
 
-	public static int [] calcularSuma (int [] arregloN, int [] arregloK) {
+	public static int [] calculateSum (int [] arregloN, int [] arregloK) {
 
 		int v1,v2,v3;
 
@@ -963,7 +967,7 @@ public class Arreglos {
 		return suma;
 	}
 
-	public static int [] calcularResta (int [] arregloN, int [] arregloK) {
+	public static int [] calculateSubtraction(int [] arregloN, int [] arregloK) {
 
 		int v1,v2,v3;
 
@@ -995,7 +999,7 @@ public class Arreglos {
 		return resta;
 	}
 
-	public static int [] calcularMultiplicacion (int [] arregloN, int [] arregloK) {
+	public static int [] calculateMultiplying (int [] arregloN, int [] arregloK) {
 
 		int v1,v2,v3;
 
@@ -1027,7 +1031,7 @@ public class Arreglos {
 		return multiplicacion;
 	}
 
-	public static int [] unirArreglos (int [] arregloN, int [] arregloK, int [] arregloM ) {
+	public static int [] linkArrays (int [] arregloN, int [] arregloK, int [] arregloM ) {
 
 		int [] union = new int [arregloN.length+arregloK.length+arregloM.length];
 
@@ -1056,7 +1060,7 @@ public class Arreglos {
 
 	}
 
-	public static void quitarDuplicados(int [] arregloN) {
+	public static void removeduplicates(int [] arregloN) {
 
 		for(int i=0;i<arregloN.length;i++){
 			for(int j=0;j<arregloN.length-1;j++){
@@ -1128,7 +1132,7 @@ public class Arreglos {
 		return arregloN;
 	}
 
-	public static int[] burbuja(int[] arregloN) {
+	public static int[] bubble(int[] arregloN) {
 
 		int assistant;
 		int[] arregloOrdenado;
