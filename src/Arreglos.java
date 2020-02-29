@@ -11,7 +11,7 @@ public class Arreglos {
 		//With the Scanner we going to read and save anything you type
 
 		System.out.println("Welcome to menu");
-		System.out.println("Please, choose one of the next two options");
+		System.out.println("Please, choose one of the next three options");
 		System.out.println("1: Character string");
 		System.out.println("2: Division of real numbers");
 		System.out.println("3: Three array creation (length and content choose for you)");
@@ -23,7 +23,7 @@ public class Arreglos {
 		if(choose==1) {
 
 			String[] chain = new String[3];
-			//Okay, you choose one. This arrangement save the strings you will type next
+			//Okay, you choose one. This array save the strings you will type next
 
 			for (int i = 0; i < chain.length; i++) {
 				System.out.println("Please, type the string number " + (i+1));
@@ -38,11 +38,12 @@ public class Arreglos {
 			//I did that because all of there need the character strings
 
 			choose = lector.nextInt();
+			lector.nextLine();
 
 			switch (choose) {
 			case 1: 
 
-				System.out.println("La concatenación de sus palabras es: " + realizarConcatenacion(chain));
+				System.out.println("The concatenation of your words is: " + realizarConcatenacion(chain));
 
 				//This case do the concatenation of the point 4
 
@@ -50,9 +51,9 @@ public class Arreglos {
 
 			case 2:
 
-				for (String palabra : chain) {	
+				for (String word : chain) {	
 
-					System.out.println("Length of '" + palabra + "' is " + palabra.length());
+					System.out.println("Length of '" + word + "' is " + word.length());
 
 				}
 
@@ -61,21 +62,21 @@ public class Arreglos {
 
 			case 3: 
 
-				System.out.println("Please, type a whole number");
+				System.out.println("Type a whole number, please");
 
-				int posicion = lector.nextInt();
-				posicion = posicion-1;
+				int position = lector.nextInt();
+				position = position-1;
 
-				for (String palabra : chain) {
+				for (String word : chain) {
 
-					if(posicion>=palabra.length() || posicion<0) { 
+					if(position>=word.length() || position<0) { 
 
 						System.out.println("Number entered is not valid");
 
 					}
 					else {
 
-						System.out.println("Character in position " + (posicion+1) + " is: '" + palabra.charAt(posicion) + "'");
+						System.out.println("Character in position " + (position+1) + " is: '" + word.charAt(position) + "'");
 
 					}
 				}
@@ -94,31 +95,31 @@ public class Arreglos {
 
 			if (choose==2) {
 
-				double numerador = 0;
-				double denominador = 0;
+				double numerator = 0;
+				double denominator = 0;
 
 				System.out.println("Please enter two real numbers greater than 0 that you want to divide (if you have decimals, separate it with a comma)");
 				System.out.println("Type the numerator");
 
-				while (numerador<=0) {
+				while (numerator<=0) {
 
-					numerador = lector.nextDouble();
+					numerator = lector.nextDouble();
+					lector.nextLine();
 
-
-					if(numerador<=0) {
+					if(numerator<=0) {
 
 						System.out.println("Number entered is not valid");
 					}
 				}
 
 				System.out.println("Now, type the denominator");
-				while (denominador<=0) {
+				while (denominator<=0) {
 
 
-					denominador = lector.nextDouble();
+					denominator = lector.nextDouble();
 
 
-					if(denominador<=0) {
+					if(denominator<=0) {
 
 						System.out.println("Number entered is not valid");
 					}
@@ -131,11 +132,12 @@ public class Arreglos {
 				System.out.println("2: Show the result of the division of both numbers and the value of the residual");
 
 				int decision = lector.nextInt();
+				lector.nextLine();
 
 				switch (decision) {
 				case 1:
 
-					double resultado = calcularDivision(numerador, denominador);
+					double resultado = calcularDivision(numerator, denominator);
 					System.out.println("Quotient is: '" + resultado + " '");
 					//This case gives you the quotient of the division only
 
@@ -143,12 +145,12 @@ public class Arreglos {
 
 				case 2:
 
-					int entero1 = (int) numerador;
-					int entero2 = (int) denominador;
+					int whole1 = (int) numerator;
+					int whole2 = (int) denominator;
 
-					int resultado2 = calcularDivision2(entero1, entero2);
+					int resultado2 = calcularDivision2(whole1, whole2);
 					System.out.println("Quotient is: '" + resultado2 + " '");
-					int resultado3 = calcularModulo(entero1, entero2);
+					int resultado3 = calcularModulo(whole1, whole2);
 					System.out.println("Residue is: '" + resultado3 + " '");
 					//And this case gives you the quotient and the residue of the division
 
@@ -162,64 +164,64 @@ public class Arreglos {
 
 				if(choose==3) {
 
-					System.out.println("La extensión de los arreglos se difinirá por tres números enteros");
-					System.out.println("La extensión de su primer arreglo es:");
+					System.out.println("The length of the arrays will be defined by three whole numbers");
+					System.out.println("The extension of your first array is:");
 
 					int a = lector.nextInt();
 
 					int [] num1 = new int [a];
 
 					if (a<0) 
-						System.out.println("Digita un número mayor que 0");
+						System.out.println("Type a number greater than 0");
 					else
 						if(a==0) 
-							System.out.println("Su arreglo está vacío");	
+							System.out.println("Your array is empty");	
 						else
-							System.out.println("Digite los números enteros que desea en su primer arreglo");
+							System.out.println("Type the whole numbers that you want in your first array");
 
 					for (int i = 0; i < num1.length; i++) {
 
-						System.out.print("Ingrese numero entero de la posicion"+" " +(i+1)+": ");
+						System.out.print("Type a whole number in position"+" " +(i+1)+": ");
 						num1[i] = lector.nextInt();
 
 					}
 
-					System.out.println("La extensión de su segundo arreglo es:");
+					System.out.println("The extension of your second array is:");
 					int b = lector.nextInt();
 
 					if (b<0) 
-						System.out.println("Digita un número mayor que 0");
+						System.out.println("Type a number greater than 0");
 					else
 						if(b==0) 
-							System.out.println("Su arreglo está vacío");	
+							System.out.println("Your array is empty");	
 						else
-							System.out.println("Digite los números enteros que desea en su segundo arreglo");
+							System.out.println("Type the whole numbers that you want in your second array");
 
 					int [] num2 = new int[b];
 
 					for (int i = 0; i < num2.length; i++) {
 
-						System.out.print("Ingrese numero entero de la posicion"+" " +(i+1)+": ");
+						System.out.print("Type a whole number in position"+" " +(i+1)+": ");
 						num2[i] = lector.nextInt();
 
 					}
 
-					System.out.println("La extensión de su tercer arreglo es:");
+					System.out.println("The extension of your third array is:");
 					int c = lector.nextInt();
 
 					if (b<0) 
-						System.out.println("Digita un número mayor que 0");
+						System.out.println("Type a number greater than 0");
 					else
 						if(b==0) 
-							System.out.println("Su arreglo está vacío");	
+							System.out.println("Your array is empty");	
 						else
-							System.out.println("Digite los números enteros que desea en su tercer arreglo");
+							System.out.println("Type the whole numbers that you want in your third array");
 
 					int [] num3 = new int[c];
 
 					for (int i = 0; i < num3.length; i++) {
 
-						System.out.print("Ingrese numero entero de la posicion"+" " +(i+1)+": ");
+						System.out.print("Type a whole number in position"+" " +(i+1)+": ");
 						num3[i] = lector.nextInt();
 
 					}
@@ -231,17 +233,18 @@ public class Arreglos {
 					System.out.println("4: Make a new array adding up, substracting or multiplying two of them");
 					System.out.println("5: Make a new array with the union of all the arrays (with duplicate elements)");
 					System.out.println("6: Make a new array with the union of all the arrays (without duplicate elements)");
-					System.out.println("7");
-					System.out.println("8");
-					System.out.println("9");
+					System.out.println("7: Find the intersection of your arrays in a new array");
+					System.out.println("8: Rotate one of the arrays");
+					System.out.println("9: Sort one of your arrays (bubble method)");
 
 					int decision = lector.nextInt();
+					lector.nextLine();
 
 					switch (decision) {
 
 					case 1:
 
-						System.out.println("Su primer arreglo contiene:");
+						System.out.println("Your first array contains:");
 						for (int i = 0; i < num1.length; i++) {
 							for (int j = 0; j <= i; j++) {
 								System.out.print(num1[j] + " ");
@@ -249,7 +252,7 @@ public class Arreglos {
 							System.out.println();
 						}
 
-						System.out.println("Su segundo arreglo contiene:");
+						System.out.println("Your second array contains:");
 						for (int i = 0; i < num2.length; i++) {
 							for (int j = 0; j <= i; j++) {
 								System.out.print(num2[j] + " ");
@@ -257,7 +260,7 @@ public class Arreglos {
 							System.out.println();
 						}
 
-						System.out.println("Su tercer arreglo contiene:");
+						System.out.println("Your third array contains:");
 						for (int i = 0; i < num3.length; i++) {
 							for (int j = 0; j <= i; j++) {
 								System.out.print(num3[j] + " ");
@@ -268,12 +271,12 @@ public class Arreglos {
 						break;
 
 					case 2:
-						System.out.println("Digita un número del 1 al 3, siendo 1 tu primer arreglo y 3 el último");
+						System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last");
 						int arreglo1 = lector.nextInt();
 						arreglo1-=1;
 
 						if (arreglo1<0||arreglo1>2) 
-							System.out.println("El número digitado es inválido");
+							System.out.println("The number entered isn't valid");
 
 						else {
 
@@ -295,12 +298,12 @@ public class Arreglos {
 
 					case 3:
 
-						System.out.println("Digita un número del 1 al 3, siendo 1 tu primer arreglo y 3 el último");
+						System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last");
 						int arreglo2 = lector.nextInt();
 						arreglo2-=1;
 
 						if (arreglo2<0||arreglo2>2) 
-							System.out.println("El número digitado es inválido");
+							System.out.println("The number entered isn't valid");
 
 						else {
 
@@ -322,17 +325,18 @@ public class Arreglos {
 
 					case 4:
 
-						System.out.println("¿Qué desea hacer?");
-						System.out.println("1: Sumar");
-						System.out.println("2: Restar");
-						System.out.println("3: Multiplicar");
+						System.out.println("What doy you want to do?");
+						System.out.println("1: Add");
+						System.out.println("2: Substract");
+						System.out.println("3: Multiply");
 
 						int desicion = lector.nextInt();
+						lector.nextLine();
 
 						switch (desicion) {
 						case 1:
 
-							System.out.println("Escoge un número del 1 al 3, siendo 1 tu primer arreglo y 3 el último, para sumarlo");
+							System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last, for adding up");
 							int arreglo3 = lector.nextInt();
 							arreglo3-=1;
 
@@ -341,7 +345,7 @@ public class Arreglos {
 							arreglo4-=1;
 
 							if ((arreglo3<0||arreglo3>2) || (arreglo4<0||arreglo4>2)) 
-								System.out.println("El número digitado es inválido");
+								System.out.println("The number entered isn't valid");
 
 							else {
 
@@ -456,7 +460,7 @@ public class Arreglos {
 
 						case 2:
 
-							System.out.println("Escoge un número del 1 al 3, siendo 1 tu primer arreglo y 3 el último, para restarlo");
+							System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last, for substracting");
 							int arreglo5 = lector.nextInt();
 							arreglo5-=1;
 
@@ -465,7 +469,7 @@ public class Arreglos {
 							arreglo6-=1;
 
 							if ((arreglo5<0||arreglo5>2) || (arreglo6<0||arreglo6>2)) 
-								System.out.println("El número digitado es inválido");
+								System.out.println("The number entered isn't valid");
 
 							else {
 
@@ -580,7 +584,7 @@ public class Arreglos {
 
 						case 3:
 
-							System.out.println("Escoge un número del 1 al 3, siendo 1 tu primer arreglo y 3 el último, para multiplicarlo");
+							System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last, for multiplying");
 							int arreglo7 = lector.nextInt();
 							arreglo7-=1;
 
@@ -589,7 +593,7 @@ public class Arreglos {
 							arreglo8-=1;
 
 							if ((arreglo7<0||arreglo7>2) || (arreglo8<0||arreglo8>2)) 
-								System.out.println("El número digitado es inválido");
+								System.out.println("The number entered isn't valid");
 
 							else {
 
@@ -701,10 +705,7 @@ public class Arreglos {
 							}
 
 							break;
-						default: 
-
-							System.out.println("Por favor, digite un número del 1 al 3 solamente");
-
+						default: System.out.println("Type a number from 1 to 3 only");
 							break;
 						}
 
@@ -731,17 +732,99 @@ public class Arreglos {
 
 					case 7:
 
+						System.out.println("The intersection of your arrays is:");
+						findCommon(num1, num2, num3);
+
 						break;
 
 					case 8:
+
+						System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last");
+						int arreglo9 = lector.nextInt();
+						lector.nextLine();
+						arreglo9-=1;
+
+						if (arreglo9<0||arreglo9>2) 
+							System.out.println("The number entered isn't valid");
+
+						else {
+
+							if (arreglo9==0) {
+
+								System.out.println("Type how many positions do you want to rotate");
+								int rotate = lector.nextInt();
+
+								System.out.println("The result of the rotate is:");
+								int [] result = rotateArray(num1, rotate);
+								System.out.println(Arrays.toString(result));
+
+							}
+
+							else if (arreglo9==1) {
+
+								System.out.println("Type how many positions do you want to rotate");
+								int rotate = lector.nextInt();
+
+								System.out.println("The result of the rotate is:");
+								int [] result = rotateArray(num2, rotate);
+								System.out.println(Arrays.toString(result));
+
+							}
+
+							else if (arreglo9==2) {
+
+								System.out.println("Type how many positions do you want to rotate");
+								int rotate = lector.nextInt();
+
+								System.out.println("The result of the rotate is:");
+								int [] result = rotateArray(num3, rotate);
+								System.out.println(Arrays.toString(result));
+
+							}
+						}
 
 						break;
 
 					case 9:
 
+						System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last");
+						int arreglo10 = lector.nextInt();
+						lector.nextLine();
+						arreglo10-=1;
+
+						if (arreglo10<0||arreglo10>2) 
+							System.out.println("The number entered isn't valid");
+
+						else {
+
+							if (arreglo10==0) {
+
+								System.out.println("Your sorted array is:");
+								int [] result = burbuja(num1);
+								System.out.println(Arrays.toString(result));
+
+							}
+
+							else if (arreglo10==1) {
+
+								System.out.println("Your sorted array is:");
+								int [] result = burbuja(num2);
+								System.out.println(Arrays.toString(result));
+
+							}
+
+							else if (arreglo10==2) {
+
+								System.out.println("Your sorted array is:");
+								int [] result = burbuja(num1);
+								System.out.println(Arrays.toString(result));
+								
+							}
+						}
+
 						break;
 
-					default:
+					default: System.out.println("Number entered is not valid, restart the program");
 						break;
 					}
 				}
@@ -767,7 +850,7 @@ public class Arreglos {
 
 	/** name: CalcularDivision
 	 * Calcula la division de resultado double de dos números
-	 * <b>Pre: double numerador, double denominador deben estar inicializados; denominador != 0</b>
+	 * <b>Pre: double numerator, double denominator should be initialized; denominator != 0</b>
 	 * @param numerador
 	 * @param denominador
 	 * @return resultado de la disivión de ambos parámetros de tipo double
@@ -979,20 +1062,94 @@ public class Arreglos {
 			for(int j=0;j<arregloN.length-1;j++){
 				if(i!=j){
 					if(arregloN[i]==arregloN[j]){
-						arregloN[i]=-1000000000;
+						arregloN[i]=0;
 					}
 				}
 			}
 		}
-		
+
 		System.out.print("[");
 		int n=arregloN.length;
 		for (int k=0;k<=n-1;k++){
-			if(arregloN[k]!=-1000000000){
+			if(arregloN[k]!=0){
 				System.out.print(" " + arregloN[k] + " ");
 			}
 		}
 		System.out.print("]");
 		return;
 	}
+
+	public static void findCommon(int arregloN[], int arregloM[], int arregloK[]) {
+
+		Arrays.sort(arregloN);
+		Arrays.sort(arregloM);
+		Arrays.sort(arregloK);
+
+		int i = 0, j = 0, k = 0; 
+
+		System.out.print("[");
+		while (i < arregloN.length && j < arregloM.length && k < arregloK.length) {
+
+			if (arregloN[i] == arregloM[j] && arregloM[j] == arregloK[k]) {
+				
+				System.out.print(" " + arregloN[i] + " ");   i++; j++; k++;
+				
+			}
+
+			else if (arregloN[i] < arregloM[j]) 
+				i++; 
+
+			else if (arregloM[j] < arregloK[k]) 
+				j++; 
+
+			else
+				k++; 
+		} 
+		
+		System.out.print("]");
+	} 
+
+	public static int[] rotateArray(int[] arregloN, int n){
+
+		int i,j,temp,temp1;
+
+		for(i=1;i<=n;i++){
+
+			temp = arregloN[0];
+
+			for(j=0;j<arregloN.length;j++){
+
+				temp1 = arregloN[(j+1) % arregloN.length];
+				arregloN[(j+1) % arregloN.length] = temp;
+				temp = temp1;
+			}
+		}
+
+		return arregloN;
+	}
+
+	public static int[] burbuja(int[] arregloN) {
+
+		int assistant;
+		int[] arregloOrdenado;
+
+		for(int i = 1; i < arregloN.length; i++) {
+
+			for(int j = 0;j < arregloN.length-i;j++) {
+
+				if(arregloN[j] > arregloN[j+1]) {
+
+					assistant = arregloN[j];
+					arregloN[j] = arregloN[j+1];
+					arregloN[j+1] = assistant;
+
+				}   
+
+			}
+
+		}
+		arregloOrdenado = arregloN;
+		return arregloOrdenado;
+	}
+
 }
