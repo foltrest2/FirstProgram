@@ -1,9 +1,8 @@
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.stream.IntStream;
 public class Arreglos {
 
-	//My program has the next limitation: if you don't follow the rules, you need to restart
+	//My program has the next limitation: you need to restart the program after finishing with the chosen option
 
 	public static void main(String[] args) {
 
@@ -40,10 +39,12 @@ public class Arreglos {
 			choose = lector.nextInt();
 			lector.nextLine();
 
+//			With this switch the program recognize the chosen option and do that
+
 			switch (choose) {
 			case 1: 
 
-				System.out.println("The concatenation of your words is: " + realizarConcatenacion(chain));
+				System.out.println("The concatenation of your words is: " + realizeConcatenation(chain));
 
 				//This case do the concatenation of the point 4
 
@@ -126,6 +127,7 @@ public class Arreglos {
 				}
 
 				//				After you choose two, you will stay here a long time if you don't type a real positive number
+				//				This point receive two numbers 
 
 				System.out.println("Please, choose one of the next two options");
 				System.out.println("1: Show the result of the division of both numbers");
@@ -139,7 +141,7 @@ public class Arreglos {
 
 					double resultado = calculateDivision(numerator, denominator);
 					System.out.println("Quotient is: '" + resultado + " '");
-					//This case gives you the quotient of the division only
+					//This case gives you the double quotient of the division only
 
 					break;
 
@@ -152,7 +154,7 @@ public class Arreglos {
 					System.out.println("Quotient is: '" + resultado2 + " '");
 					int resultado3 = calculateModule(whole1, whole2);
 					System.out.println("Residue is: '" + resultado3 + " '");
-					//And this case gives you the quotient and the residue of the division
+					//And this case gives you the whole quotient and residue of the division
 
 					break;
 
@@ -163,6 +165,8 @@ public class Arreglos {
 			else 
 
 				if(choose==3) {
+
+//					Here you enter your three arrays (point 9)
 
 					System.out.println("The length of the arrays will be defined by three whole numbers");
 					System.out.println("The extension of your first array is:");
@@ -226,6 +230,8 @@ public class Arreglos {
 
 					}
 
+//					This is the sub menu in the option 3
+					
 					System.out.println("Please, choose one of the next options");
 					System.out.println("1: Show the content of the arrays");
 					System.out.println("2: Show the average of one of them");
@@ -237,13 +243,18 @@ public class Arreglos {
 					System.out.println("8: Rotate one of the arrays");
 					System.out.println("9: Sort one of your arrays (bubble method)");
 
+					
 					int decision = lector.nextInt();
 					lector.nextLine();
 
+//					With this switch the program recognize the chosen option and do that
+					
 					switch (decision) {
 
 					case 1:
 
+//						This case print the content of the arrays in pyramid form
+						
 						System.out.println("Your first array contains:");
 						for (int i = 0; i < num1.length; i++) {
 							for (int j = 0; j <= i; j++) {
@@ -271,6 +282,9 @@ public class Arreglos {
 						break;
 
 					case 2:
+						
+//						This case print the average of one of the arrays (chosen for you)
+						
 						System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last");
 						int arreglo1 = lector.nextInt();
 						arreglo1-=1;
@@ -283,23 +297,25 @@ public class Arreglos {
 							if (arreglo1==0)
 
 								System.out.println("The average of your array is " + 
-calculateAverage(num1));
+										calculateAverage(num1));
 
 							else if (arreglo1==1)
 
 								System.out.println("The average of your array is" + 
-calculateAverage(num2));
+										calculateAverage(num2));
 
 							else if (arreglo1==2)
 
 								System.out.println("The average of your array is" + 
-calculateAverage(num3));
+										calculateAverage(num3));
 
 						}
 
 						break;
 
 					case 3:
+						
+//						This case print the higher number in one of the arrays
 
 						System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last");
 						int arreglo2 = lector.nextInt();
@@ -312,33 +328,38 @@ calculateAverage(num3));
 
 							if (arreglo2==0)
 
-								System.out.println("The largest number of your array is " + calculateHigher(num1));
+								System.out.println("The higher number of your array is " + calculateHigher(num1));
 
 							else if (arreglo2==1)
 
-								System.out.println("The largest number of your array is " + calculateHigher(num2));
+								System.out.println("The higher number of your array is " + calculateHigher(num2));
 
 							else if (arreglo2==2)
 
-								System.out.println("The largest number of your array is " + calculateHigher(num3));
+								System.out.println("The higher number of your array is " + calculateHigher(num3));
 
 						}
 
 						break;
 
 					case 4:
+						
+//						This case print a sub menu, when you can decide what do you want to do (add, subtract or multiply two arrays)
 
 						System.out.println("What do you want to do?");
 						System.out.println("1: Add");
-						System.out.println("2: Substract");
+						System.out.println("2: Subtract");
 						System.out.println("3: Multiply");
 
 						int desicion = lector.nextInt();
 						lector.nextLine();
 
+//						With this switch the program recognize the chosen option and do that
 						switch (desicion) {
 						case 1:
 
+//							This case do the sum
+							
 							System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last, for adding up");
 							int arreglo3 = lector.nextInt();
 							arreglo3-=1;
@@ -462,6 +483,8 @@ calculateAverage(num3));
 							break;
 
 						case 2:
+							
+//							This case do the subtract
 
 							System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last, for substracting");
 							int arreglo5 = lector.nextInt();
@@ -510,7 +533,7 @@ calculateAverage(num3));
 
 									}
 								}
-								
+
 								else if (arreglo5==1 && arreglo6==0) {
 
 									System.out.println("The subtraction between your array " + (arreglo5+1) + " and " + (arreglo6+1) + " is: ");
@@ -588,6 +611,8 @@ calculateAverage(num3));
 
 						case 3:
 
+//							This case do the multiply
+							
 							System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last, for multiplying");
 							int arreglo7 = lector.nextInt();
 							arreglo7-=1;
@@ -710,12 +735,14 @@ calculateAverage(num3));
 
 							break;
 						default: System.out.println("Type a number from 1 to 3 only");
-							break;
+						break;
 						}
 
 						break;
 
 					case 5:
+						
+//						This case link the three arrays given and print the union with duplicate elements
 
 						System.out.println("The union of your three arrays with repeated elements is:");
 
@@ -726,15 +753,19 @@ calculateAverage(num3));
 						break;
 
 					case 6:
+						
+//						This case link the three arrays given and print the union without duplicate elements 
 
 						System.out.println("The union of your three arrays without repeated elements is:");
 
 						int [] union1 = linkArrays(num1, num2, num3);
-						removeduplicates(union1);
+						removeDuplicates(union1);
 
 						break;
 
 					case 7:
+						
+//						This case do the intersection of the three arrays given
 
 						System.out.println("The intersection of your arrays is:");
 						findCommon(num1, num2, num3);
@@ -742,6 +773,8 @@ calculateAverage(num3));
 						break;
 
 					case 8:
+						
+//						This case asks a whole number to rotate one array, after that print the rotate array 
 
 						System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last");
 						int arreglo9 = lector.nextInt();
@@ -790,6 +823,8 @@ calculateAverage(num3));
 						break;
 
 					case 9:
+						
+//						This case calls the bubble method to sort one array
 
 						System.out.println("Type a number from 1 to 3, 1 being your first array and 3 the last");
 						int arreglo10 = lector.nextInt();
@@ -822,14 +857,14 @@ calculateAverage(num3));
 								System.out.println("Your sorted array is:");
 								int [] result = bubble(num1);
 								System.out.println(Arrays.toString(result));
-								
+
 							}
 						}
 
 						break;
 
 					default: System.out.println("Number entered is not valid, restart the program");
-						break;
+					break;
 					}
 				}
 				else
@@ -838,7 +873,13 @@ calculateAverage(num3));
 
 	}
 
-	public static String realizarConcatenacion(String [] arregloN) {
+	/**name: realizeContatenation
+	 * This method realize the concatenation of three character strings
+	 * <b>Pre: arregloN should be initialized</b>
+	 * @param arregloN is a string array
+	 * @return Concatenation of the character strings
+	 */
+	public static String realizeConcatenation(String [] arregloN) {
 
 		String concatenar = "";
 
@@ -853,10 +894,10 @@ calculateAverage(num3));
 	}
 
 	/** name: CalcularDivision
-	 * Calcula la division de resultado double de dos números
-	 * <b>Pre: double numerator, double denominator should be initialized; denominator != 0</b>
-	 * @param numerador
-	 * @param denominador
+	 * Calculate the division with double result of two numbers
+	 * <b>Pre: numerator, denominator should be initialized; denominator != 0</b>
+	 * @param numerador is a double
+	 * @param denominador is a double
 	 * @return resultado de la disivión de ambos parámetros de tipo double
 	 */
 
@@ -871,11 +912,11 @@ calculateAverage(num3));
 	}
 
 	/** name: CalcularDivision2
-	 * Calcula la división entera de dos números
-	 * <b>Pre: int entero1, int entero2 deben estar inicializados; entero2 != 0</b>
-	 * @param entero1
-	 * @param entero2
-	 * @return Retorna la division de ambos parámetros con resultado int
+	 * This method calculates the whole division of two numbers
+	 * <b>Pre: entero1, entero2 should be initialized; entero2 != 0</b>
+	 * @param entero1 is a int
+	 * @param entero2 is a int
+	 * @return Return the whole division of two numbers with int result
 	 */
 
 	public static int calculateDivision2 (int entero1, int entero2) {
@@ -888,11 +929,11 @@ calculateAverage(num3));
 	} 
 
 	/**name: CalcularModulo
-	 * Calcula el residuo de los dos parámetros, resultado tipo int
-	 * <b>Pre: int entero1, int entero2 deben estar inicializados; entero2 != 0</b>
-	 * @param entero1
-	 * @param entero2
-	 * @return Retorna el residuo de la división de ambos parámetros con resultado int
+	 * This method calculates residue of the division of the parameters, type of result int
+	 * <b>Pre: entero1, entero2 should be initialized; entero2 != 0</b>
+	 * @param entero1 is a int
+	 * @param entero2 is a int
+	 * @return Return residue of the division of the parameters, type of result int
 	 */
 	public static int calculateModule (int entero1, int entero2) {
 
@@ -903,7 +944,12 @@ calculateAverage(num3));
 		return resultado;
 	} 
 
-
+	/**name: calculateAverage
+	 * This method calculates the average of a the elements in a unique array
+	 * <b>Pre: arregloN should be initialized, arregloN.length != 0</b>
+	 * @param arregloN is a int array
+	 * @return Return the average of the array
+	 */
 	public static double calculateAverage(int arregloN[]) {
 
 		double promedio = 0;
@@ -919,6 +965,12 @@ calculateAverage(num3));
 
 	}
 
+	/**name: calculateHigher
+	 * This method identifies the higher element in one array
+	 * <b>Pre: arregloN should be initialized, arregloN.length != 0 </b>
+	 * @param arregloN is a int array
+	 * @return Return the higher element in the array
+	 */
 	public static int calculateHigher(int arregloN []) {
 
 		int mayor = arregloN [0];
@@ -935,6 +987,13 @@ calculateAverage(num3));
 		return mayor;
 	}
 
+	/**name: calculateSum
+	 * This method calculates the sum of two arrays
+	 * <b>Pre: arregloN, arregloK should be initialized; arregloN.length&&arregloK.length != 0 </b>
+	 * @param arregloN is a int array
+	 * @param arregloK is a int array
+	 * @return Return a int array with the result of add up each element in arregloN and arregloK
+	 */
 	public static int [] calculateSum (int [] arregloN, int [] arregloK) {
 
 		int v1,v2,v3;
@@ -967,6 +1026,13 @@ calculateAverage(num3));
 		return suma;
 	}
 
+	/**name: calculateSubtraction
+	 * This method calculates the subtraction of two arrays
+	 * <b>Pre: arregloN, arregloK should be initialized; arregloN.length&&arregloK.length != 0 </b>
+	 * @param arregloN is a int array
+	 * @param arregloK is a int array
+	 * @return Return a int array with the result of subtract each element in arregloN and arregloK
+	 */
 	public static int [] calculateSubtraction(int [] arregloN, int [] arregloK) {
 
 		int v1,v2,v3;
@@ -999,6 +1065,13 @@ calculateAverage(num3));
 		return resta;
 	}
 
+	/**name: calculateMultiplying
+	 * This method calculates the multiply of two arrays
+	 * <b>Pre: arregloN, arregloK should be initialized; arregloN.length&&arregloK.length != 0 </b>
+	 * @param arregloN is a int array
+	 * @param arregloK is a int array
+	 * @return Return a int array with the result of multiply each element in arregloN and arregloK
+	 */
 	public static int [] calculateMultiplying (int [] arregloN, int [] arregloK) {
 
 		int v1,v2,v3;
@@ -1031,6 +1104,14 @@ calculateAverage(num3));
 		return multiplicacion;
 	}
 
+	/**name: linkArrays
+	 * This method link three arrays with duplicate elements
+	 * <b>Pre: arregloN, arregloK, arregloM should be initialized; arregloN.length&&arregloK.length&&arregloM != 0 </b>
+	 * @param arregloN is a int array
+	 * @param arregloK is a int array
+	 * @param arregloM is a int array
+	 * @return returns the resulting union of the arrays
+	 */
 	public static int [] linkArrays (int [] arregloN, int [] arregloK, int [] arregloM ) {
 
 		int [] union = new int [arregloN.length+arregloK.length+arregloM.length];
@@ -1060,7 +1141,12 @@ calculateAverage(num3));
 
 	}
 
-	public static void removeduplicates(int [] arregloN) {
+	/**name: removeDuplicates
+	 * This method remove the duplicate elements in one array and print the no duplicate elements
+	 * <b>Pre: arregloN should be initialized, arregloN.length != 0</b>
+	 * @param arregloN is a int array
+	 */
+	public static void removeDuplicates(int [] arregloN) {
 
 		for(int i=0;i<arregloN.length;i++){
 			for(int j=0;j<arregloN.length-1;j++){
@@ -1083,6 +1169,13 @@ calculateAverage(num3));
 		return;
 	}
 
+	/**name: findCommon
+	 * This method find the common elements in three arrays and print them 
+	 * <b>Pre: arregloN, arregloK, arregloM should be initialized </b>
+	 * @param arregloN is a int array
+	 * @param arregloM is a int array
+	 * @param arregloK is a int array
+	 */
 	public static void findCommon(int arregloN[], int arregloM[], int arregloK[]) {
 
 		Arrays.sort(arregloN);
@@ -1095,9 +1188,9 @@ calculateAverage(num3));
 		while (i < arregloN.length && j < arregloM.length && k < arregloK.length) {
 
 			if (arregloN[i] == arregloM[j] && arregloM[j] == arregloK[k]) {
-				
+
 				System.out.print(" " + arregloN[i] + " ");   i++; j++; k++;
-				
+
 			}
 
 			else if (arregloN[i] < arregloM[j]) 
@@ -1109,10 +1202,17 @@ calculateAverage(num3));
 			else
 				k++; 
 		} 
-		
+
 		System.out.print("]");
 	} 
 
+	/**name: rotateArray
+	 * This method rotate one array
+	 * <b>Pre: arregloN, n should be initialized, n != 0</b>
+	 * @param arregloN is a int array
+	 * @param n is a int
+	 * @return return the rotated array
+	 */
 	public static int[] rotateArray(int[] arregloN, int n){
 
 		int i,j,temp,temp1;
@@ -1132,6 +1232,11 @@ calculateAverage(num3));
 		return arregloN;
 	}
 
+	/**name: bubble
+	 * This method sort the array numbers from least to greatest
+	 * @param arregloN is a int array
+	 * @return return the sorted array
+	 */
 	public static int[] bubble(int[] arregloN) {
 
 		int assistant;
